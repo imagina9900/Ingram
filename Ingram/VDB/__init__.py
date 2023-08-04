@@ -27,5 +27,7 @@ def get_vul(dev: str) -> list:
         return [cve_2017_14514, ]
     elif dev == config.DVR:
         return [cve_2018_9995, ]
+        elif dev == config.DLINK:
+    return [dlink_weak, ]
     else:
         return []
