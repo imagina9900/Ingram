@@ -128,10 +128,10 @@ def uniview_weak(ip: str) -> list:
 
 # still bugs...
 def dlink_weak(ip: str) -> list:
-    headers = {'Connection': 'close', 'User-Agent': USERAGENT}
+     headers = {'Connection': 'close', 'User-Agent': USERAGENT}
     for user in USERS:
         for p in PASSWDS:
-            r = requests.get(f"http://{ip}", verify=False, headers=headers, timeout=TIMEOUT, auth=(user, p))
-            if r.status_code == 200 and 'D-Link' in r.text:
+            r = requests.get(f"http://{ip}:{port}", verify=False, headers=headers, timeout=TIMEOUT, auth=(user, p))
+            if r.status_code == 200 and 'D-Link' in r.text or 'Welcome' in r.text:
                 return [True, str(user), str(p), 'weak pass']
     return [False, ]
