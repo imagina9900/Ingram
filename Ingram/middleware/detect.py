@@ -69,10 +69,9 @@ def device_detect(ip: str, port: str) -> str:
             return config.DVR
     except Exception as e:
         logger.error(e)
-
+elif 'D-Link' in self.session.get(f"http://{ip}:{port}/login.htm").text:
+        return config.DLINK
     return config.NON_MATCH_DEV
-
-
 def port_detect(ip: str, port: str) -> bool:
     """detect whether the port is open"""
     s = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
