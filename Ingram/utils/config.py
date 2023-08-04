@@ -25,6 +25,7 @@ class Config:
         self.TENDA_W15E = 'tenda-w15e'
         self.TPLINK = 'tplink'
         self.HUAWEI = 'huawei'
+        self.DLINK = 'dlink'
 
 
 global config
