@@ -33,6 +33,7 @@ def device_detect(ip: str, port: str) -> str:
         f"http://{ip}/skin/default_1/images/logo.png",  # uniview-dev
         f"http://{ip}",  # dlink
         f"http://{ip}/login.rsp"  # dvr
+        f"http://{ip}/login.htm"  # D-Link
     ]
 
     # these are need to be hashed
